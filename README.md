@@ -1,6 +1,6 @@
-# Flutter Whats Up Clone
+# Flutter Whats App Clone
 
-A Flutter Whats Up project.
+A Flutter Whats App project.
 
 ## Documentation
 

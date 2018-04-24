@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'camera_page.dart';
+import 'chats_page.dart';
+import 'status_page.dart';
+import 'calls_page.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -31,10 +35,30 @@ class HomePageState extends State<HomePage> with SingleTickerProviderStateMixin 
             new Tab(text: "CALLS"),
           ],
         ),
+        actions: <Widget>[
+          new IconButton(
+            icon: new Icon(Icons.search),
+            onPressed: () => print('Search'),
+          ),
+          new IconButton(
+            icon: new Icon(Icons.more_vert),
+            onPressed: () => print('Menu'),
+          )
+        ],
       ),
       body: new TabBarView(
         controller: _tabController,
-        children: <Widget>[],
+        children: <Widget>[
+          new CameraPage(),
+          new ChatsPage(),
+          new StatusPage(),
+          new CallsPage()
+        ],
+      ),
+      floatingActionButton: new FloatingActionButton(
+        backgroundColor:Theme.of(context).accentColor,
+        child: new Icon(Icons.message, color: Colors.white),
+        onPressed: () => print('new message'),
       ),
     );
   }
